@@ -13,13 +13,6 @@ export const FourthPage = () => {
     const roleInputRef = useRef<HTMLInputElement>(null)
     const ageInputRef = useRef<HTMLInputElement>(null)
 
-    // const submitHandler = (event:SubmitEvent) => {
-    //     event.preventDefault()
-    //
-    // }
-
-
-
     const submitHandler = (e:FormEvent) => {
         e.preventDefault()
         const inputRole = roleInputRef.current!.value
