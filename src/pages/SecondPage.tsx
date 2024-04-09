@@ -1,13 +1,15 @@
 import {ThirdPage} from "./ThirdPage.tsx";
 import {useContext} from "react";
-import {AgeContext, RoleContext, TermContext, UserContext} from "../providers/Providers.tsx";
+import {ApplicationContext} from "../contexts/Providers.tsx";
 
 export const SecondPage = () => {
 
-    const {user} = useContext(UserContext)!
-    const {term} = useContext(TermContext)!
-    const {role} = useContext(RoleContext)!
-    const {age} = useContext(AgeContext)!
+    const {
+        user,
+        term,
+        role,
+        age
+    } = useContext(ApplicationContext)!
 
     return <>
         <div>SecondPage</div>
@@ -19,6 +21,6 @@ export const SecondPage = () => {
         </ul>
         <br/>
         <br/>
-        <ThirdPage />
+        <ThirdPage/>
     </>
 }

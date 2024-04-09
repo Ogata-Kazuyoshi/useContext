@@ -1,6 +1,6 @@
 import './App.css'
 import {FirstPage} from "./pages/FirstPage.tsx";
-import {Providers} from "./providers/Providers.tsx";
+import {Providers} from "./contexts/Providers.tsx";
 
 
 

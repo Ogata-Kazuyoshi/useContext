@@ -1,19 +1,22 @@
 import {FormEvent, useContext, useRef} from "react";
-import {AgeContext, RoleContext, Roles, TermContext, UserContext} from "../providers/Providers.tsx";
+import {ApplicationContext, Roles} from "../contexts/Providers.tsx";
 
 export const FourthPage = () => {
 
-    const {setUser} = useContext(UserContext)!
-    const {setTerm} = useContext(TermContext)!
-    const {setRole} = useContext(RoleContext)!
-    const {setAge} = useContext(AgeContext)!
+    const {
+        setUser,
+        setTerm,
+        setRole,
+        setAge
+    } = useContext(ApplicationContext)!
+
 
     const userInputRef = useRef<HTMLInputElement>(null)
     const termInputRef = useRef<HTMLInputElement>(null)
     const roleInputRef = useRef<HTMLInputElement>(null)
     const ageInputRef = useRef<HTMLInputElement>(null)
 
-    const submitHandler = (e:FormEvent) => {
+    const submitHandler = (e: FormEvent) => {
         e.preventDefault()
         const inputRole = roleInputRef.current!.value
 
@@ -39,8 +42,8 @@ export const FourthPage = () => {
     }
 
     return <>
-    <div>FourthPage</div>
-        <form onSubmit={submitHandler} >
+        <div>FourthPage</div>
+        <form onSubmit={submitHandler}>
             <div>
                 <label>user変更：</label>
                 <input ref={userInputRef} type="text"/>
